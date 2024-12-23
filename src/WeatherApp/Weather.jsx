@@ -19,22 +19,22 @@ let[data,setData]=useState({
     axios.get(api).then((res) =>{
       let WeatherMain = res.data.weather[0].main.toLowerCase();
       let imagePath = '';
-      if( WeatherMain =="clouds"){
+      if( WeatherMain ==="clouds"){
         imagePath = "/Images/clouds.png"
       }
-      else if( WeatherMain =="clear"){
+      else if( WeatherMain ==="clear"){
         imagePath ="/Images/clear.png"
       }
-      else if( WeatherMain =="Rain"){
+      else if( WeatherMain ==="Rain"){
         imagePath ="/Images/Rain.png"
       }
-      else if( WeatherMain =="drizzle"){
+      else if( WeatherMain ==="drizzle"){
         imagePath ="/Images/drizzle.png"
       }
-      else if( WeatherMain =="mint"){
+      else if( WeatherMain ==="mint"){
         imagePath ="/Images/mint.png"
       }
-      else if( WeatherMain =="snow"){
+      else if( WeatherMain ==="snow"){
         imagePath= "/Images/snow.png"
       }
       else{
@@ -45,7 +45,7 @@ let[data,setData]=useState({
     })
     
     .catch(err =>{
-      if(err.response.status == 404){
+      if(err.response.status === 404){
         setError("Invalid city Name")
       }
       else{
